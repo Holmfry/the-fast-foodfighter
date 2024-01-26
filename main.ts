@@ -1,7 +1,7 @@
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    music.play(music.createSoundEffect(WaveShape.Sawtooth, 1, 935, 255, 0, 100, SoundExpressionEffect.Vibrato, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
     projectile = sprites.createProjectileFromSprite(assets.image`shortburstweiner`, ship, 0, -140)
     projectile.startEffect(effects.coolRadial, 100)
+    music.play(music.createSoundEffect(WaveShape.Sawtooth, 1, 935, 255, 0, 100, SoundExpressionEffect.Vibrato, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy()
@@ -14,7 +14,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     otherSprite.destroy(effects.disintegrate)
     sprite.startEffect(effects.fire, 200)
     info.changeLifeBy(-1)
-    music.play(music.createSoundEffect(WaveShape.Square, 101, 1, 255, 0, 100, SoundExpressionEffect.None, InterpolationCurve.Curve), music.PlaybackMode.UntilDone)
+    music.play(music.createSoundEffect(WaveShape.Noise, 553, 687, 255, 0, 100, SoundExpressionEffect.None, InterpolationCurve.Curve), music.PlaybackMode.UntilDone)
 })
 let projectile: Sprite = null
 let ship: Sprite = null
@@ -68,7 +68,7 @@ ship.bottom = 120
 controller.moveSprite(ship, 100, 100)
 info.setLife(3)
 effects.starField.startScreenEffect()
-music.play(music.createSong(assets.song`DrumStart`), music.PlaybackMode.LoopingInBackground)
+music.play(music.createSong(assets.song`DrumStart`), music.PlaybackMode.UntilDone)
 game.onUpdateInterval(500, function () {
     projectile = sprites.createProjectileFromSide(asteroids[randint(0, asteroids.length - 1)], 0, 75)
     projectile.setKind(SpriteKind.Enemy)

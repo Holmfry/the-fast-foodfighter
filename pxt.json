@@ -1,5 +1,5 @@
 {
-    "name": "The Fast Foodfighter",
+    "name": "The Fast Foodfighter - Copy",
     "version": "0.0.1",
     "description": "",
     "dependencies": {
@@ -18,7 +18,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "1.13.55",
+        "target": "1.12.46",
         "targetId": "arcade"
     },
     "supportedTargets": [
